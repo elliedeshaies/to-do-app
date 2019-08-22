@@ -15,6 +15,15 @@ function onReady() {
     // create a new input
     let checkbox = document.createElement('input');
 
+    // create a new button
+    let button = document.createElement('button');
+
+    // set the button title
+    button.textContent = 'Delete';
+
+    // set the button class
+    button.className = 'mdl-button mdl-js-button mdl-button--accent';
+
     // set the input's type to checkbox
     checkbox.type = "checkbox";
 
@@ -24,6 +33,9 @@ function onReady() {
     // attach the checkbox to the li
     newLi.appendChild(checkbox);
 
+    // attach the button to the li
+    newLi.appendChild(button);
+
     // attach the li to the ul
     toDoList.appendChild(newLi);
 
@@ -32,6 +44,13 @@ function onReady() {
 
   });
 }
+
+  toDoList.addEventListener('click', event => {
+
+    // remove the li
+    event.target.parentNode.remove();
+
+  })
 
 window.onload = function() {
   onReady();
