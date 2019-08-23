@@ -3,6 +3,7 @@ function onReady() {
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
+
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -20,6 +21,13 @@ function onReady() {
 
     // set the button title
     button.textContent = 'Delete';
+
+    button.addEventListener('click', event => {
+
+      // remove the li
+      event.target.parentNode.remove();
+
+    })
 
     // set the button class
     button.className = 'mdl-button mdl-js-button mdl-button--accent';
@@ -44,13 +52,6 @@ function onReady() {
 
   });
 }
-
-  toDoList.addEventListener('click', event => {
-
-    // remove the li
-    event.target.parentNode.remove();
-
-  })
 
 window.onload = function() {
   onReady();
